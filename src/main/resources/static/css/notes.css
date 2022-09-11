@@ -1,0 +1,164 @@
+.listingBtn {
+	background-color: #228B22;
+	height: 55px;
+	color: white;
+	font-weight: bold;
+	border-radius: 2em;
+	border-style: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	letter-spacing: -.24px;
+	margin: 0;
+	outline: none;
+	padding: 1rem 1.3rem;
+	text-align: center;
+	text-decoration: none;
+}
+
+.listingBtn:hover {
+	background-color: #2E8B57;
+	box-shadow: #FFDAB9 0 -6px 8px inset;
+	transform: scale(1.125);
+}
+
+.houseMarketBtn {
+	background-color: #5F9EA0;
+	color: white;
+	font-weight: bold;
+	border-radius: 2em;
+	border-style: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block;
+	letter-spacing: -.24px;
+	margin: 0;
+	outline: none;
+	padding: 1rem 1.3rem;
+	text-align: center;
+	text-decoration: none;
+	touch-action: manipulation;
+}
+
+.houseMarketBtn:hover {
+	background-color:  	#008080;
+	box-shadow: #FFDAB9 0 -6px 8px inset;
+	transform: scale(1.125);
+}
+
+.logoutBtn {
+	background-color: #DC143C;
+	color: white;
+	font-weight: bold;
+	border-radius: 2em;
+	border-style: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block;
+	letter-spacing: -.24px;
+	margin: 0;
+	outline: none;
+	padding: 1rem 1.3rem;
+	text-align: center;
+	text-decoration: none;
+	touch-action: manipulation;
+}
+
+.logoutBtn:hover {
+	background-color: #8B0000;
+	box-shadow: #FFDAB9 0 -6px 8px inset;
+	transform: scale(1.125);
+}
+
+.houseLink{
+	height: 30px;
+	width: 100%;
+	background-color: #778899;	
+	border-radius: 20px;
+	border-style: none;
+	color: white;
+	font-weight: bold;
+}
+
+.houseLink:hover {
+	background-color: #2F4F4F;
+	box-shadow: #FFDAB9 0 -6px 8px inset;
+	transform: scale(1.125);
+}
+
+.notes-navbar {
+	display: flex;  
+	justify-content: space-evenly;
+	background-color: 	#FFFFF0;
+	padding-bottom: 10px;
+}
+.notes-title {
+	font-family: Tahoma (sans-serif);
+	font-size: 40px;
+	text-shadow: 2px 2px 2px gray;
+	font-weight: bold;
+	margin-left: 10px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.userGreeting {
+	text-align: center;
+	font-size: 30px;
+	font-family: Tahoma (sans-serif);
+	margin-top: 15px;
+}
+
+.noteContainer {
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 35px;
+	border-style: none;
+}
+
+.noteHouseDetails {
+	height: 400px;
+	width: 400px;
+
+}
+.noteHouseDetails > h4 {
+	text-align: left;
+	font-weight: 600;
+	overflow: hidden;
+}
+
+.noteBox {
+	height: 500px;
+	width: 500px;
+	border-style: none;
+	align-items: flex-end;
+}
+
+.noteSpan {
+	color: gray;
+	margin-left: 5px;
+}
+.noteBox > h2, h4, p {
+	text-align: center;
+}
+
+.noteBox > h2 {
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+.noteForm {
+	margin-top: 30px;
+	height: 200px;
+	width: 300px;
+	position: relative;
+}
+
+.noteBtn {
+	height: 40px;
+	width: 75%;
+	background-color: #6A5ACD;
+	margin-top: 2px;
+	position: absolute;
+	left: 25%;
+	border-radius: 1.5rem;
+	color: white;
+	font-weight: bold;
+}

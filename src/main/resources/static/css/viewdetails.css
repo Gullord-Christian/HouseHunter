@@ -1,0 +1,200 @@
+body {
+	background: linear-gradient(115deg, #E6E6FA 60%, #F5F5F5 60%);
+}
+.listingBtn {
+	background-color: #228B22;
+	height: 55px;
+	color: white;
+	font-weight: bold;
+	border-radius: 2em;
+	border-style: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	letter-spacing: -.24px;
+	margin: 0;
+	outline: none;
+	padding: 1rem 1.3rem;
+	text-align: center;
+	text-decoration: none;
+}
+
+.listingBtn:hover {
+	background-color: #2E8B57;
+	box-shadow: #FFDAB9 0 -6px 8px inset;
+	transform: scale(1.125);
+}
+
+.houseMarketBtn {
+	background-color: #5F9EA0;
+	color: white;
+	font-weight: bold;
+	border-radius: 2em;
+	border-style: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block;
+	letter-spacing: -.24px;
+	margin: 0;
+	outline: none;
+	padding: 1rem 1.3rem;
+	text-align: center;
+	text-decoration: none;
+	touch-action: manipulation;
+}
+
+.houseMarketBtn:hover {
+	background-color:  	#008080;
+	box-shadow: #FFDAB9 0 -6px 8px inset;
+	transform: scale(1.125);
+}
+
+.logoutBtn {
+	background-color: #DC143C;
+	color: white;
+	font-weight: bold;
+	border-radius: 2em;
+	border-style: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block;
+	letter-spacing: -.24px;
+	margin: 0;
+	outline: none;
+	padding: 1rem 1.3rem;
+	text-align: center;
+	text-decoration: none;
+	touch-action: manipulation;
+}
+
+.logoutBtn:hover {
+	background-color: #8B0000;
+	box-shadow: #FFDAB9 0 -6px 8px inset;
+	transform: scale(1.125);
+}
+
+
+.viewdetails-navbar {
+	display: flex;  
+	justify-content: space-evenly;
+	background-color: 	#F5F5F5;
+	padding-bottom: 10px;
+}
+
+.viewdetails-title {
+	font-family: Tahoma (sans-serif);
+	font-size: 40px;
+	text-shadow: 2px 2px 2px gray;
+	font-weight: bold;
+	margin-left: 10px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.userGreeting {
+	text-align: center;
+	font-size: 30px;
+	font-family: Tahoma (sans-serif);
+	margin-top: 15px;
+}
+
+.detailContainer {
+	height: 500px;
+	width: 1000px;
+	border: 2px solid gray;
+	border-width: 5px;
+	border-style: inset;
+	margin: 0 auto;  
+	position: relative;
+	padding-top: 30px;
+	margin-top: 30px;
+	border-radius: 20px;
+	background-color: #F8F8FF;
+}
+
+.detailContainer-header {
+	width: 500px;
+	margin: 0 auto;
+	display: flex;
+	margin-top: 20px;
+}
+.detailContainer-footer-right {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding-bottom: 10px;
+	padding-right: 30px;
+}
+
+.detailContainer-footer-left {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding-bottom: 10px;
+	padding-left: 30px;
+}
+.noteBtn {
+	height: 40px;
+	width: 110%;
+	letter-spacing: 0.25px;
+	background-color:#8c8c8c;
+	color: white;
+	font-weight: bold;
+	border-radius: 2em;
+	border-style: none;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.noteBtn:hover {
+	background-color: #9fa2a5;
+}
+.detail-deleteBtn {
+	height: 40px;
+	width: 100px;
+	background-color: red;
+	margin-top: 5px;
+	color: white;
+	border-radius: 2em;
+	border-style: none;
+	margin-left: 5px;
+	font-weight: bold;
+	font-size: 1.15rem;
+}
+.detail-deleteBtn:hover {
+	background-color: #fc5353;
+}
+
+.detail-editBtn {
+	height: 40px;
+	width: 100px;
+	background-color: blue;
+	margin-top: 5px;
+	color: white;
+	border-radius: 2em;
+	border-style: none;
+	font-weight: bold;
+	font-size: 1.15rem;
+}
+
+.detail-editBtn:hover {
+	background-color: #475cff;
+}
+
+.houseDetailTitles {
+	justify-content: flex-start;
+	padding-right: 100px;
+}
+
+.houseDetailValues {
+	justify-content: left;
+}
+
+.houseDetailTitles > h3 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.houseDetailValues > h3 {
+	font-size: 20px;
+}
+
+
