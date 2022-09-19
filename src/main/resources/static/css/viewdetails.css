@@ -1,13 +1,14 @@
 body {
-	background: linear-gradient(115deg, #E6E6FA 60%, #F5F5F5 60%);
+	background: linear-gradient(115deg, #E6E6FA 60%, #F5F5F5 60.1%);
+	height: 100vh;
+	font-family: "Lato", sans-serif;
 }
 .listingBtn {
-	background-color: #228B22;
-	height: 55px;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
-	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	letter-spacing: -.24px;
@@ -19,17 +20,18 @@ body {
 }
 
 .listingBtn:hover {
-	background-color: #2E8B57;
+	background-color:  	#2E8B57;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
 
 .houseMarketBtn {
-	background-color: #5F9EA0;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
-	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	display: inline-block;
@@ -43,17 +45,19 @@ body {
 }
 
 .houseMarketBtn:hover {
-	background-color:  	#008080;
+	background-color:  	#4682B4;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
 
 .logoutBtn {
-	background-color: #DC143C;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
 	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	display: inline-block;
@@ -70,6 +74,7 @@ body {
 	background-color: #8B0000;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
 
 
@@ -94,11 +99,12 @@ body {
 	font-size: 30px;
 	font-family: Tahoma (sans-serif);
 	margin-top: 15px;
+	
 }
 
 .detailContainer {
 	height: 500px;
-	width: 1000px;
+	width: 850px;
 	border: 2px solid gray;
 	border-width: 5px;
 	border-style: inset;
@@ -128,7 +134,6 @@ body {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	padding-bottom: 10px;
 	padding-left: 30px;
 }
 .noteBtn {
@@ -147,10 +152,11 @@ body {
 .noteBtn:hover {
 	background-color: #9fa2a5;
 }
+
 .detail-deleteBtn {
 	height: 40px;
 	width: 100px;
-	background-color: red;
+	background-color: #CD5C5C;
 	margin-top: 5px;
 	color: white;
 	border-radius: 2em;
@@ -159,14 +165,15 @@ body {
 	font-weight: bold;
 	font-size: 1.15rem;
 }
+
 .detail-deleteBtn:hover {
-	background-color: #fc5353;
+	background-color: rgb(247, 37, 37);
 }
 
 .detail-editBtn {
 	height: 40px;
 	width: 100px;
-	background-color: blue;
+	background-color:#1E90FF;
 	margin-top: 5px;
 	color: white;
 	border-radius: 2em;
@@ -176,9 +183,8 @@ body {
 }
 
 .detail-editBtn:hover {
-	background-color: #475cff;
+	background-color: #1b2af8;
 }
-
 .houseDetailTitles {
 	justify-content: flex-start;
 	padding-right: 100px;
@@ -197,4 +203,7 @@ body {
 	font-size: 20px;
 }
 
-
+.title {
+	text-align: center;
+	margin-top: 20px;
+}

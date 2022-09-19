@@ -31,9 +31,18 @@
 			<h1 class="userGreeting">Welcome, 
 			<c:out value="${user.firstName}"></c:out> <c:out value="${user.lastName }"/>! </h1>	
 			<h5 style="font-style: italic ">Our mission is to help you find your dream home</h5>
-			<a href="/houses/new"><button class="listingBtn">Add a new listing </button></a>
-			<a href="/housemarket"><button class="houseMarketBtn"> House Market</button></a>
-			<a href="/logout"><button class="logoutBtn">Log Out</button></a>	
+			<c:choose>
+				<c:when test="${user.realtor_buyer == 'Realtor' }">
+					<a href="/houses/new"><button class="listingBtn">Add a new listing </button></a>
+					<a href="/housemarket"><button class="houseMarketBtn"> House Market</button></a>
+					<a href="/logout"><button class="logoutBtn">Log Out</button></a>
+				</c:when>
+				<c:otherwise>
+					 <a href="/dashboard"><button class="listingBtn">Dashboard </button></a>
+					 <a href="/housemarket"><button class="houseMarketBtn"> House Market</button></a>
+					 <a href="/logout"><button class="logoutBtn">Log Out</button></a>	
+				</c:otherwise>
+			</c:choose>
 		</div>	
 	</div>
 		<div class="noteContainer">
@@ -43,38 +52,41 @@
 				<h4> State: <span class="noteSpan"><c:out value="${house.city }"/></span> </h4>
 				<h4> Zip Code: <span class="noteSpan"><c:out value="${house.zipcode }"/></span> </h4>
 				<h4> Listing Date: <span class="noteSpan"><fmt:formatDate value="${house.listingDate}" 
-					pattern="MMM dd YYYY"/></span> </h4>
-				<h4> Listed by: <span class="noteSpan"><c:out value="${house.user.firstName}" /> </span></h4>
-				<h4> Price: <span class="noteSpan">$<c:out value="${house.price }" /></span></h4>
+					pattern="MMM. dd, YYYY"/></span> </h4>
+				<h4> Listed By: <span class="noteSpan"><c:out value="${house.user.firstName}" /> </span></h4>
+				<h4> Price: <span class="noteSpan">
+						<fmt:setLocale value = "en_US"/>
+	        			<fmt:formatNumber value = "${house.price}" type="currency" pattern="$###,###"/>	
+				</span></h4>
 				<h4> Bedrooms: <span class="noteSpan"><c:out value="${house.bedrooms }" /></span></h4>
 				<h4> Bathrooms: <span class="noteSpan"><c:out value="${house.bathrooms }" /></span></h4>
 				<h4> Sq. Ft: <span class="noteSpan"><c:out value="${house.squarefootage }" /></span></h4>
 			<div class="noteForm">
 				<form:form action="/houses/${house.id }/notes" method="post" modelAttribute="newNote">
 					<div>
-						<form:errors path="note" class="text-danger"/>
+						<form:errors path="note" class="note-error"/>
 						<form:textarea rows="4" cols="50" class="input" path="note" 
-						placeholder="Add a note for this lister..." style="border-radius: 10px;"/>
+						placeholder="Add a note for this house..." style="border-radius: 10px; background-color: #FFFFF0;"/>
 						<button class="noteBtn" type="submit">Add note</button>
 					</div>
 				</form:form>
 			</div>
 			</div>
 			<div class="noteBox">
-				<h2>Notes</h2>
 				<c:choose>
-				<c:when test="${notes.isEmpty()}">
-					<p>There are currently no notes, be the first! </p>
-				</c:when>
-						<c:otherwise>
-							<c:forEach var="note" items="${notes }">
-							<h4><c:out value="${note.note }"></c:out></h4>
-							<p>Added by: <c:out value="${note.creator.firstName }"> </c:out> 
-							<c:out value="${note.creator.lastName }" /> <br>
-							<fmt:formatDate value="${note.createdAt }" pattern="h:mm a || MMM dd, YY" /></p>
-							<hr style="width: 60%; margin-left: auto; margin-right: auto;">
-							</c:forEach>
-						</c:otherwise>
+					<c:when test="${notes.isEmpty()}">
+						<p class="empty-note-message">There are currently no posted notes, be the first! </p>
+						<img src="/images/house_front_page.svg" id="note-image">
+					</c:when>
+					<c:otherwise>
+						<c:forEach var="note" items="${notes }">
+						<h5>"<c:out value="${note.note }"></c:out>"</h5>
+						<p>- <c:out value="${note.creator.firstName }"> </c:out> 
+						<c:out value="${note.creator.lastName }" /> <br>
+						<fmt:formatDate value="${note.createdAt }" pattern="h:mm a || MMM dd, YY" /></p>
+						<hr style="width: 60%; margin-left: auto; margin-right: auto;">
+						</c:forEach>
+					</c:otherwise>
 				</c:choose>
 			</div>
 		</div>

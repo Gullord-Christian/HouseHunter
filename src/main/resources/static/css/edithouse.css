@@ -1,10 +1,15 @@
+body {
+	background-image: linear-gradient(10deg, 	#F0FFFF 20%, #F5f5f5 80%);
+	height: 100vh;
+	font-family: "Lato", sans-serif;
+}
+
 .listingBtn {
-	background-color: #228B22;
-	height: 55px;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
-	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	letter-spacing: -.24px;
@@ -16,17 +21,18 @@
 }
 
 .listingBtn:hover {
-	background-color: #2E8B57;
+	background-color:  	#2E8B57;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
 
 .houseMarketBtn {
-	background-color: #5F9EA0;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
-	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	display: inline-block;
@@ -40,17 +46,19 @@
 }
 
 .houseMarketBtn:hover {
-	background-color:  	#008080;
+	background-color:  	#4682B4;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
 
 .logoutBtn {
-	background-color: #DC143C;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
 	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	display: inline-block;
@@ -67,11 +75,20 @@
 	background-color: #8B0000;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
 
 .form-inline {
 	position: relative;
+	height: 700px;
+	margin: 40px auto;
+	width: 600px;
+	background: #f8f8f8;
+	border: 5px solid black;
+	border-style: inset;
+	z-index: 2;
 }
+
 .submitBtn {
 	background-color: #6A5ACD;
 	height: 50px;
@@ -95,12 +112,14 @@
 	transform: scale(1.125);
 
 }
+
 .edithouse-navbar {
 	display: flex;  
 	justify-content: space-evenly;
-	background-color: 	#FFFFF0;
+	background-color:#F5F5F5;
 	padding-bottom: 10px;
 }
+
 .edithouse-title {
 	font-family: Tahoma (sans-serif);
 	font-size: 40px;
@@ -115,5 +134,9 @@
 	font-size: 30px;
 	font-family: Tahoma (sans-serif);
 	margin-top: 15px;
+}
+
+.row {
+	padding: 5px 20px 5px 20px;
 }
 

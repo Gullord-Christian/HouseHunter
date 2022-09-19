@@ -15,6 +15,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.ColumnDefault;
+
 @Entity
 @Table(name="users")
 public class UserModel {
@@ -23,27 +25,30 @@ public class UserModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @NotEmpty
-    @Size(min=3, max=30, message="First Name must be at least 3 characters")
+    @NotEmpty(message="First Name must be at least 3 characters")
+    @Size(min=3, max=30, message="")
     private String firstName;
 
-	@NotEmpty
-    @Size(min=3, max=30, message="Last Name must be at least 3 characters")
+	@NotEmpty(message="Last Name must be at least 3 characters")
+    @Size(min=3, max=30, message="")
     private String lastName;    
     
     @NotEmpty(message="Please enter a valid email!")
     @Email
     private String email;
     
-    @NotEmpty
-    @Size(min=8, max=128, message="Password must be at least 8 characters") 
+    @NotEmpty(message="Password must be at least 8 characters")
+    @Size(min=8, max=128, message="") 
     private String password;     // will be hashed, make sure the max is at least 128
     
     @Transient 
-    @NotEmpty
-    @Size(min=8, max=128, message="Passwords must match")
+    @NotEmpty(message="Passwords must match")
+    @Size(min=8, max=128, message="")
     private String confirm;
-  
+    
+    @NotEmpty(message="Must select buyer or realtor")
+    private String realtor_buyer;
+    
     // one user can have many houses listed
     @Column(updatable=false)
     @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
@@ -114,5 +119,28 @@ public class UserModel {
 	public void setHouses(List<HouseModel> houses) {
 		this.houses = houses;
 	}
-    
+
+	public String getRealtor_buyer() {
+		return realtor_buyer;
+	}
+
+	public void setRealtor_buyer(String realtor_buyer) {
+		this.realtor_buyer = realtor_buyer;
+	}
+
+	public List<NoteModel> getNotesCreated() {
+		return notesCreated;
+	}
+
+	public void setNotesCreated(List<NoteModel> notesCreated) {
+		this.notesCreated = notesCreated;
+	}
+
+	public List<HouseModel> getSavedHouses() {
+		return savedHouses;
+	}
+
+	public void setSavedHouses(List<HouseModel> savedHouses) {
+		this.savedHouses = savedHouses;
+	}
 }

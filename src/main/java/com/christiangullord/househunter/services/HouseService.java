@@ -3,7 +3,13 @@ package com.christiangullord.househunter.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.christiangullord.househunter.models.HouseModel;
@@ -11,6 +17,7 @@ import com.christiangullord.househunter.models.UserModel;
 import com.christiangullord.househunter.repositories.HouseRepo;
 
 @Service
+
 public class HouseService {
 	@Autowired
 	private final HouseRepo houseRepo;
@@ -19,6 +26,7 @@ public class HouseService {
 		this.houseRepo = houseRepo;
 	}
 	
+
 	// find all
 	public List<HouseModel> allHouses(){
 		return houseRepo.findAll();
@@ -65,6 +73,5 @@ public class HouseService {
 	public List<HouseModel> myHouses(UserModel user){
 		return houseRepo.findByHouseSaverIdIs(user.getId());
 	}
-	
-	
+
 }

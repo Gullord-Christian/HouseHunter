@@ -1,10 +1,15 @@
+body {
+	background: linear-gradient(45deg, #B0C4DE 60%, #F5F5F5 60.2%);
+	height: 100vh;
+	font-family: "Lato", sans-serif;
+}
+
 .listingBtn {
-	background-color: #228B22;
-	height: 55px;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
-	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	letter-spacing: -.24px;
@@ -16,17 +21,18 @@
 }
 
 .listingBtn:hover {
-	background-color: #2E8B57;
+	background-color:  	#2E8B57;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
 
 .houseMarketBtn {
-	background-color: #5F9EA0;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
-	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	display: inline-block;
@@ -40,17 +46,19 @@
 }
 
 .houseMarketBtn:hover {
-	background-color:  	#008080;
+	background-color:  	#4682B4;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
 
 .logoutBtn {
-	background-color: #DC143C;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
 	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	display: inline-block;
@@ -67,6 +75,7 @@
 	background-color: #8B0000;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
 
 .houseLink{
@@ -88,7 +97,7 @@
 .notes-navbar {
 	display: flex;  
 	justify-content: space-evenly;
-	background-color: 	#FFFFF0;
+	background-color: 	#F5F5F5;
 	padding-bottom: 10px;
 }
 .notes-title {
@@ -112,53 +121,82 @@
 	justify-content: space-evenly;
 	margin-top: 35px;
 	border-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .noteHouseDetails {
 	height: 400px;
 	width: 400px;
+	margin-top: 100px
 
 }
 .noteHouseDetails > h4 {
 	text-align: left;
 	font-weight: 600;
 	overflow: hidden;
+	color: rgb(102, 97, 97);
 }
 
 .noteBox {
-	height: 500px;
+	min-height: 500px;
+	padding: 20px;
 	width: 500px;
-	border-style: none;
 	align-items: flex-end;
+	background-color:#FFFFF0;
+	z-index: 2;
+	margin-top: 10;
+	border-radius: 10px;
 }
 
 .noteSpan {
-	color: gray;
+	color: black;
 	margin-left: 5px;
+	text-shadow: 0.5px 0px 0px black;
 }
-.noteBox > h2, h4, p {
+
+.noteBox > h2, h5, p {
 	text-align: center;
 }
 
-.noteBox > h2 {
-	font-weight: bold;
-	margin-bottom: 30px;
-}
 .noteForm {
 	margin-top: 30px;
 	height: 200px;
-	width: 300px;
+	width: 320px;
 	position: relative;
 }
 
 .noteBtn {
 	height: 40px;
 	width: 75%;
-	background-color: #6A5ACD;
-	margin-top: 2px;
+	background-color:#ea3c5e;
+	margin-top: 10px;
 	position: absolute;
-	left: 25%;
+	left: 22%;
 	border-radius: 1.5rem;
 	color: white;
 	font-weight: bold;
+}
+
+.noteBtn:hover {
+	background-color: #FFFFF0;
+	color: black;
+}
+
+#note-image {
+	height: 200px;
+	margin-top: 60px;
+	margin-left: 20px;
+}
+
+.note-error {
+	color: red;
+	font-weight: bold;
+	width: 100%;
+}
+
+.empty-note-message {
+	font-weight: bold;
+	text-align: center;
+	margin-top: 25px;
 }

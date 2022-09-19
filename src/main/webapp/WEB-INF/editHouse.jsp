@@ -28,15 +28,25 @@
 			<h1 class="userGreeting">Welcome, 
 			<c:out value="${user.firstName}"></c:out> <c:out value="${user.lastName }"/>! </h1>	
 			<h5 style="font-style: italic ">Our mission is to help you find your dream home</h5>
-			<a href="/houses/new"><button class="listingBtn">Add a new listing </button></a>
-			<a href="/housemarket"><button class="houseMarketBtn"> House Market</button></a>
-			<a href="/logout"><button class="logoutBtn">Log Out</button></a>	
+			<c:choose>
+				<c:when test="${user.realtor_buyer == 'Realtor' }">
+					<a href="/houses/new"><button class="listingBtn">Add a new listing </button></a>
+					<a href="/housemarket"><button class="houseMarketBtn"> House Market</button></a>
+					<a href="/logout"><button class="logoutBtn">Log Out</button></a>
+				</c:when>
+				<c:otherwise>
+					 <a href="/dashboard"><button class="listingBtn">Dashboard </button></a>
+					 <a href="/housemarket"><button class="houseMarketBtn"> House Market</button></a>
+					 <a href="/logout"><button class="logoutBtn">Log Out</button></a>	
+				</c:otherwise>
+			</c:choose>
 		</div>	
 	</div>
-	<h1 style="text-align: center">Edit Listing</h1>
 		<div class=" col-lg-6 offset-lg-3">
 			<div class="row justify-content-center">
-		    <form:form action="/houses/edit/${id}" method="post" modelAttribute="house" class="form-inline" enctype="multipart/form-data">
+		    <form:form action="/houses/edit/${id}" method="post" modelAttribute="house" 
+		    class="form-inline" enctype="multipart/form-data">
+		    	<h1 style="text-align: center; margin-top: 10px">Edit Listing</h1>
 		    <input type="hidden" name="_method" value="put" />
 				<div class="row">
 					<form:label path="address"> Address: </form:label>

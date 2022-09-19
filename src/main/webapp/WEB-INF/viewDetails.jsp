@@ -31,12 +31,21 @@
 			<h1 class="userGreeting">Welcome, 
 			<c:out value="${user.firstName}"></c:out> <c:out value="${user.lastName }"/>! </h1>	
 			<h5 style="font-style: italic ">Our mission is to help you find your dream home</h5>
-			<a href="/houses/new"><button class="listingBtn">Add a new listing </button></a>
-			<a href="/housemarket"><button class="houseMarketBtn"> House Market</button></a>
-			<a href="/logout"><button class="logoutBtn">Log Out</button></a>	
+			<c:choose>
+				<c:when test="${user.realtor_buyer == 'Realtor' }">
+					<a href="/houses/new"><button class="listingBtn">Add a new listing </button></a>
+					<a href="/housemarket"><button class="houseMarketBtn"> House Market</button></a>
+					<a href="/logout"><button class="logoutBtn">Log Out</button></a>
+				</c:when>
+				<c:otherwise>
+					 <a href="/dashboard"><button class="listingBtn">Dashboard </button></a>
+					 <a href="/housemarket"><button class="houseMarketBtn"> House Market</button></a>
+					 <a href="/logout"><button class="logoutBtn">Log Out</button></a>	
+				</c:otherwise>
+			</c:choose>	
 		</div>	
 	</div>
-		<h2 style="text-align: center;">House details</h2>
+		<h2 class="title">House Details</h2>
 		<div class="detailContainer">
 				<div class=detailContainer-header>
 					<div class="houseDetailTitles">
@@ -47,13 +56,16 @@
 						<h3>Zip Code: </h3>
 						<h3>Bedrooms: </h3>
 						<h3>Bathrooms: </h3>
-						<h3>Square feet: </h3>
+						<h3>Square Feet: </h3>
 						<h3>Listing Date:</h3>
-						<h3>Listed by: </h3>
+						<h3>Listed By: </h3>
 					</div>
 					<div class="houseDetailValues">
 						<h3> <c:out value="${house.address}" /> </h3>
-						<h3>$<c:out value="${house.price}" /> </h3>
+						<h3>
+						<fmt:setLocale value = "en_US"/>
+	        			<fmt:formatNumber value = "${house.price}" type="currency" pattern="$###,###"/>	
+		        		 </h3>
 						<h3> <c:out value="${house.state }"/></h3>
 						<h3> <c:out value="${house.city }"/></h3>
 						<h3> <c:out value="${house.zipcode }" /> </h3>
@@ -61,7 +73,7 @@
 						<h3> <c:out value="${house.bathrooms }"/></h3>
 						<h3> <c:out value="${house.squarefootage }"/></h3>
 						<h3> 
-						<fmt:formatDate value="${house.createdAt}" pattern="MMM dd, YYYY"  />
+						<fmt:formatDate value="${house.createdAt}" pattern="MMM. dd, YYYY"  />
 						</h3>
 						<h3>
 							<c:out value="${house.user.firstName }"/>
@@ -72,16 +84,12 @@
 			<div class="container-footer" >
 				<div class="detailContainer-footer-right">
 					<a href="/houses/${house.id}/notes">
-						<button class="noteBtn" >Add a note about this house</button>
+						<button class="noteBtn" >Add & View Notes </button>
 					</a>
 				</div>
 			</div>
 			<c:if test = "${userId == house.user.id }" >
 			<div class="detailContainer-footer-left">
-				<p style="font-style:italic; font-size: 12px;">
-						** Because you listed this house <c:out value="${user.firstName }"/>, <br>
-						you may edit or delete the listing.
-					</p>
 				<div style="display: flex;">
 					<a href="/houses/edit/${id }"><button class="detail-editBtn">Edit</button></a>
 					 <form action="/houses/delete/${house.id }" method="post" >
@@ -89,6 +97,10 @@
 					 	<button type="submit" class="detail-deleteBtn">Delete</button>
 					 </form>
 				</div>
+					<p style="font-style:italic; font-size: 12px; padding-bottom: 10px; margin-bottom: 0px;">
+						** Because you listed this house <c:out value="${user.firstName }"/>, <br>
+						you may edit or delete the listing.
+					</p>
 			</div>
 			</c:if>
 		</div>

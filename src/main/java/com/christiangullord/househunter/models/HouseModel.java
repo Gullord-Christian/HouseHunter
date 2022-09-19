@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -22,6 +23,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
 @Entity
 @Table(name="houses")
@@ -43,8 +45,9 @@ public class HouseModel {
 	@Size(min=3, message="Please list a state")
 	private String state;
 	
-	@Size(min=6, message="Please enter a price")
-	private String price;
+	@NotNull(message="Please enter a price")
+	@Min(6)
+	private Integer price;
 	
 	@NotNull(message="Please enter number of bedrooms")
 	@Min(1)
@@ -52,7 +55,7 @@ public class HouseModel {
 	
 	@NotNull(message="Please enter number of bathrooms")
 	@Min(1)
-	private Integer bathrooms;
+	private Float bathrooms;
 	
 	@NotNull(message="Please enter square footage")
 	@Min(1)
@@ -91,17 +94,15 @@ public class HouseModel {
 	@JoinColumn(name="houseSaver_id")
 	private UserModel houseSaver;
 
-	@ManyToMany(fetch = FetchType.LAZY)
-		@JoinTable(
-				name = "users_houses",
-				joinColumns = @JoinColumn(name = "house_id"),
-				inverseJoinColumns = @JoinColumn(name = "user_id")
-				)
-	private List<NoteModel> notes;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="note_id")
+	private NoteModel notes;
+	
 	
 	public HouseModel() {}
 	
-	public HouseModel(String address, String price, Date listingDate, int bedrooms, int bathrooms, 
+
+	public HouseModel(String address, int price, Date listingDate, int bedrooms, Float bathrooms, 
 					  String city, String state, int squarefootage, int zipcode, UserModel user) {
 		this.address = address;
 		this.price = price;
@@ -146,10 +147,11 @@ public class HouseModel {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public String getPrice() {
+
+	public Integer getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 	public Integer getBedrooms() {
@@ -158,10 +160,11 @@ public class HouseModel {
 	public void setBedrooms(Integer bedrooms) {
 		this.bedrooms = bedrooms;
 	}
-	public Integer getBathrooms() {
+
+	public Float getBathrooms() {
 		return bathrooms;
 	}
-	public void setBathrooms(Integer bathrooms) {
+	public void setBathrooms(Float bathrooms) {
 		this.bathrooms = bathrooms;
 	}
 	public Integer getSquarefootage() {
@@ -200,6 +203,13 @@ public class HouseModel {
 	public void setHouseSaver(UserModel houseSaver) {
 		this.houseSaver = houseSaver;
 	}
+	public NoteModel getNotes() {
+		return notes;
+	}
+	public void setNotes(NoteModel notes) {
+		this.notes = notes;
+	}
+
 //	public Integer getHouseimg() {
 //		return houseimg;
 //	}
@@ -212,6 +222,5 @@ public class HouseModel {
 //	public void setImgFileName(String imgFileName) {
 //		this.imgFileName = imgFileName;
 //	}
-
 	
 }

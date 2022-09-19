@@ -11,7 +11,7 @@ input {
 }
 
 .app-title {
-	text-align: right;
+	text-align: center;
 	color: #696969;
 	font-size: 3.5rem;
 	text-shadow: 2px 2px 2px white;
@@ -35,6 +35,8 @@ input {
 	left: 0;
 	z-index: 2;
 }
+
+
 
 .container::before {
 	content: "";
@@ -61,11 +63,22 @@ form {
 }
 
 .title {
-	font-size: 2.2rem;
+	font-size: 2.0rem;
 	color: #696969;
 	margin-bottom: 10px;
 }
 
+.title-welcome {
+	margin-bottom: 100px;
+	font-size: 2.5rem;
+	color: #696969;
+	
+}
+
+.realtor-buyer-select {
+	height: 25px;
+	font-weight: 900;
+}
 .input-field {
 	max-width: 380px;
 	width: 100%;
@@ -120,35 +133,6 @@ form {
 	background-color: #60d3f3;
 }
 
-.social-text {
-	padding: 0.7rem 0;
-}
-
-.social-media {
-	display: flex;
-	justify-content: center;
-}
-
-.social-icon {
-	height: 50px;
-	width: 50px;
-	border: 1px solid #696969;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 0.45rem;
-	text-decoration: none;
-	color: #696969;
-	border-radius: 50%;
-	font-size: 1.3rem;
-	transition: all 0.5s;
-}
-
-.social-icon:hover {
-	color: #1a9bbd;
-	border-color: #1a9bbd;
-}
-
 .login-register {
 	position: absolute;
 	top: 50%;
@@ -161,6 +145,8 @@ form {
 
 form.login-form {
 	z-index: 2;
+	min-width: 520px;
+	padding-bottom: 50px;
 }
 
 form.register-form {
@@ -168,6 +154,8 @@ form.register-form {
 	opacity: 0;
 	float: left;
 	margin-top: 100px;
+	margin-left: 20px;
+	min-width: 450px;
 }
 
 .image {
@@ -274,3 +262,6 @@ form.register-form {
 	z-index: 2;
 	opacity: 1;
 }
+
+
+

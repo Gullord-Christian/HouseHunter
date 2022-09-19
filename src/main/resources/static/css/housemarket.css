@@ -1,10 +1,16 @@
+body {
+	height: 100vh;
+	background-image: linear-gradient(115deg,  	#FFEFD5 20%, #E6E6FA 60%);
+	font-family: "Lato", sans-serif;
+}
+
+
 .listingBtn {
-	background-color: #228B22;
-	height: 55px;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
-	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	letter-spacing: -.24px;
@@ -16,17 +22,18 @@
 }
 
 .listingBtn:hover {
-	background-color: #2E8B57;
+	background-color:  	#2E8B57;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
 
 .houseMarketBtn {
-	background-color: #5F9EA0;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
-	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	display: inline-block;
@@ -40,17 +47,19 @@
 }
 
 .houseMarketBtn:hover {
-	background-color:  	#008080;
+	background-color:  	#4682B4;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
 
 .logoutBtn {
-	background-color: #DC143C;
-	color: white;
+	background: none;
 	font-weight: bold;
 	border-radius: 2em;
 	border-style: none;
+	border: 5px solid white;
+	box-shadow: 1px 1px 1px black;
 	box-sizing: border-box;
 	cursor: pointer;
 	display: inline-block;
@@ -67,18 +76,18 @@
 	background-color: #8B0000;
 	box-shadow: #FFDAB9 0 -6px 8px inset;
 	transform: scale(1.125);
+	color: white;
 }
-
 
 .houseLink{
 	height: 30px;
-	width: 100%;
 	background-color: #778899;
 	border-radius: 20px;
 	border-style: none;
 	color: white;
 	font-weight: bold;
 	cursor: pointer;
+	min-width: 100%;
 }
 
 .houseLink:hover {
@@ -90,7 +99,7 @@
 .housemarket-navbar {
 	display: flex;  
 	justify-content: space-evenly;
-	background-color: 	#FFFFF0;
+
 	padding-bottom: 10px;
 }
 
@@ -111,8 +120,8 @@
 }
 
 .housemarket-deleteBtn {
-	height: 40px;
-	width: 80px;
+	height: 50%;
+	width: 162px;
 	border-radius: 10px;
 	border-style: none;
 	background-color: #778899;
@@ -121,15 +130,17 @@
 	margin-left: 2px;
 	font-weight: bold;
 	cursor: pointer;
+	margin-top: 5px;
 }
 
 .housemarket-deleteBtn:hover {
-	background-color: red; 
+	background-color: rgb(209, 61, 61);
 	text-transform: uppercase;
 }
+
 .housemarket-editBtn {
-	height: 40px;
-	width: 80px;
+	height: 50%;
+	width: 162px;
 	border-radius: 10px;
 	border-style: none;
 	background-color: #778899;
@@ -145,7 +156,7 @@
 }
 
 .housemarket-saveBtn {
-	height: 40px;
+	height: 35px;
 	width: 162px;
 	border-radius: 10px;
 	border-style: none;
@@ -187,12 +198,52 @@
 .house-save-message {
 	text-align: center; 
 	font-weight: bold; 
-	background-color: #F5F5F5; 
 	margin-top: 10px;
 	color:#800000;
 }
 
 .house-save-message:hover {
-	font-size: 120%;
-	background-color: #D3D3D3;
+	font-weight: 900;
 }
+
+.user-image {
+	height: 22px;
+	margin-bottom: 5px;
+	
+}
+
+.table {
+	z-index: 2;
+	background-color: #FFFAFA;
+	text-align: center;
+}
+
+.pager-nav {
+    margin: 16px 12px;
+    float: right;
+
+}
+.pager-nav span {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 1px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.pager-nav span:hover,
+.pager-nav .pg-selected {
+    background-color: #f9f9f9;
+    border: 2px solid #CCCCCC;
+}
+
+.no-saved-houses {
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+	margin-top: 20px;
+}
+

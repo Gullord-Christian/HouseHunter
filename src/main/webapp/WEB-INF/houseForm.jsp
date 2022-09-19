@@ -31,19 +31,21 @@
 			<div style="text-align: center;">
 			<h1 class="userGreeting">Welcome, 
 			<c:out value="${user.firstName}"></c:out> <c:out value="${user.lastName }"/>! </h1>	
-			<h5 style="font-style: italic ">Our mission is to help you find your dream home</h5>
-			<a href="/houses/new"><button class="listingBtn">Add a new listing </button></a>
+			<h5 style="font-style: italic ">Our mission is to find your dream home</h5>
+			<a href="/dashboard"><button class="listingBtn">Dashboard </button></a>
 			<a href="/housemarket"><button class="houseMarketBtn"> House Market</button></a>
 			<a href="/logout"><button class="logoutBtn">Log Out</button></a>	
 		</div>	
+		
 	</div>
-	<h1 style="text-align: center">New Listing</h1>
-		<div class=" col-lg-6 offset-lg-3">
+		<div class="form-container col-lg-6 offset-lg-3">
 			<div class="row justify-content-center">
-		    <form:form action="/houses/new" method="post" modelAttribute="newHouse" class="form-inline" enctype="multipart/form-data">
+		    <form:form action="/houses/new" method="post" modelAttribute="newHouse" 
+		    class="form-inline" enctype="multipart/form-data">
+		    <h1 style="text-align: center; margin-top: 10px;">New Listing</h1>
 				<div class="row">
 					<form:label path="address"> Address: </form:label>
-					<form:input type="text" path="address" class="form-control-sm"  />
+					<form:input type="text" path="address" class="form-control-sm" />
 					<form:errors path="address" style="color:red" />
 				</div>
 				<div class="row">
@@ -63,7 +65,7 @@
 				</div>			
 				<div class="row">
 					<form:label path="price"> Price: </form:label>
-					<form:input type="string" path="price" class="form-control-sm"   />
+					<form:input type="number" path="price" class="form-control-sm"   />
 					<form:errors path="price" style="color:red"/>
 				</div>	
 				<div class="row">
@@ -73,7 +75,7 @@
 				</div>	
 				<div class="row">
 					<form:label path="bathrooms"> Bathrooms: </form:label>
-					<form:input type="number" path="bathrooms" class="form-control-sm"   />
+					<form:input type="number" step="0.5" path="bathrooms" class="form-control-sm"   />
 					<form:errors path="bathrooms" style="color:red"/>
 				</div>	
 				<div class="row">

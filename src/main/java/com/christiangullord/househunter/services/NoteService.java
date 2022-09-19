@@ -2,6 +2,7 @@ package com.christiangullord.househunter.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.christiangullord.househunter.models.NoteModel;
@@ -9,6 +10,8 @@ import com.christiangullord.househunter.repositories.NoteRepo;
 
 @Service
 public class NoteService {
+	
+	@Autowired
 	private final NoteRepo noteRepo;
 	
 	public NoteService (NoteRepo noteRepo) {
@@ -24,8 +27,8 @@ public class NoteService {
 	public NoteModel addNote(NoteModel note) {
 		return noteRepo.save(note);
 	}
-	public void deleteNote(NoteModel note) {
-		noteRepo.delete(note);
+	public void deleteNote(Long noteID) {
+		noteRepo.deleteById(noteID);
 	}
 	
 }

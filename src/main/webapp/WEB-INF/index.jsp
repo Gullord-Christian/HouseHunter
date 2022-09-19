@@ -24,11 +24,11 @@
 				<h1 class="app-title">House Hunter</h1>
 				<div class="login-register">
 					<form:form action="/login" method="post" modelAttribute="newLogin" class="login-form">
+					<h1 class="title-welcome">Welcome Back!</h1>
 						<h2 class="title">Sign in</h2>
 						<div class="input-field">
 							<i class="fas fa-envelope"></i>
 							<form:input path="email" type="email" placeholder="Email" />
-							<form:errors path="email" style="color:red" />
 						</div>
 						<div class="input-field">
 							<i class="fas fa-lock"></i>
@@ -38,22 +38,11 @@
 								placeholder="Password" />
 						</div>
 						<input type="submit" class="btn solid" value="Login" />
-						<p class="social-text">
-							Or sign in with social platforms
-						</p>
-						<div class="social-media">
-							<a href="#" class="social-icon">
-								<i class="fab fa-facebook-f"></i>
-							</a>
-							<a href="#" class="social-icon">
-								<i class="fab fa-twitter"></i>
-							</a>
-							<a href="#" class="social-icon">
-								<i class="fab fa-google"></i>
-							</a>
-							<a href="#" class="social-icon">
-								<i class="fab fa-linkedin"></i>
-							</a>
+						<br><br>
+						<div class="error-container">
+							<form:errors path="email" style="color:red; font-weight: bold;" />
+							<br>
+							<form:errors path="password" style="color:red; font-weight: bold;" />
 						</div>
 					</form:form>
 				</div>
@@ -67,7 +56,6 @@
 								type="text"
 								path="firstName"
 								placeholder="First Name" />
-							<form:errors path="firstName" style="color: red"/>
 						</div>
 						<div class="input-field">
 							<i class="fas fa-user"></i>
@@ -75,12 +63,10 @@
 								type="text"
 								path="lastName"
 								placeholder="Last Name" />
-							<form:errors path="lastName" style="color: red"/>
 						</div>
 						<div class="input-field">
 							<i class="fas fa-envelope"></i>
 							<form:input type="email" path="email" placeholder="Email" />
-							<form:errors path="email" style="color: red" />
 						</div>
 						<div class="input-field">
 							<i class="fas fa-lock"></i>
@@ -89,9 +75,6 @@
 								path="password"
 								placeholder="Password" />
 						</div>
-						<div>
-							<form:errors path="password" style="color: red" />
-						</div>
 						<div class="input-field">
 							<i class="fas fa-lock"></i>
 							<form:input
@@ -99,30 +82,23 @@
 								path="confirm"
 								placeholder="Password Confirmation" />
 						</div>
-						<div>
-							<form:errors path="confirm" style="color:red" />
+						<br>
+						<div class="input-field-realtor">
+								<i class="fa-solid fa-house">
+									Buying or Selling?
+								</i>
+								 <form:select path="realtor_buyer" class="realtor-buyer-select">
+								 <option value="" selected disabled hidden>Select One</option>
+								 <option value="Realtor">Realtor</option>
+								 <option value="Buyer">Buyer</option>
+								 </form:select>
 						</div>
+						<br>
 						<input
 							type="submit"
 							class="btn solid"
 							value="Register" />
-						<p class="social-text">
-							Or register with social platforms
-						</p>
-						<div class="social-media">
-							<a href="#" class="social-icon">
-								<i class="fab fa-facebook-f"></i>
-							</a>
-							<a href="#" class="social-icon">
-								<i class="fab fa-twitter"></i>
-							</a>
-							<a href="#" class="social-icon">
-								<i class="fab fa-google"></i>
-							</a>
-							<a href="#" class="social-icon">
-								<i class="fab fa-linkedin"></i>
-							</a>
-						</div>
+						
 					</form:form>
 				</div>
 			</div>
